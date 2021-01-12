@@ -1,0 +1,35 @@
+mixin content(data)
+    if data.placeholder
+        #{data.tag}(class=data.type)= data.placeholder
+    else
+        #{data.tag}(class=data.type)
+            if data.children
+                each child in data.children
+                    +content(child)
+            if data.nodes
+                each node in data.nodes
+                    #{node}
+
+doctype html
+html
+    head
+        title= type
+        style.
+            #container{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    body
+        div#container
+                if placeholder
+                    #{tag}(class=type)= placeholder
+                else
+                    #{tag}(class=type)
+                        if children
+                            each child in children
+                                +content(child)
+                        if nodes
+                            each node in nodes
+                                #{node}

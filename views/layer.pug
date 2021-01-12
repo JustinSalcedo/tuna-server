@@ -1,0 +1,25 @@
+mixin content(data)
+    if data.placeholder
+        #{data.tag}(class=data.type)= data.placeholder
+    else
+        #{data.tag}(class=data.type)
+            if data.children
+                each child in data.children
+                    +content(child)
+            if data.nodes
+                each node in data.nodes
+                    #{node}
+
+doctype html
+html
+    head
+        title= name
+        link(rel="stylesheet" href=color.file)       
+        link(rel="stylesheet" href=font.file)
+        each section in children
+            link(rel="stylesheet", href=section.layout.file)
+    body
+        each section in children
+            #{section.tag}(id=section.category)
+                each component in section.children
+                    +content(component)                  
