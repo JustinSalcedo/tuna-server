@@ -1,0 +1,35 @@
+{
+  "name": "tuna",
+  "version": "0.1.0",
+  "description": "web page views generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "webpage",
+    "view",
+    "template",
+    "engine",
+    "frontend",
+    "model",
+    "layout",
+    "theme",
+    "generator",
+    "creator",
+    "randomizer"
+  ],
+  "author": "Justin Salcedo",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.13",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.3",
+    "pug": "^2.0.4",
+    "uuidv4": "^6.1.0"
+  }
+}
